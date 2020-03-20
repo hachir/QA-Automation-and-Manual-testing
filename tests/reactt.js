@@ -79,6 +79,23 @@ module.exports ={
            .verify.containsText('@nameFilterResults', 'Maddy')
             .clearValue('@nameFilterInput')
             .pause(5000)
-
-    }
+        },
+        'Palindrome Test':browser => {
+            hachir 
+            .setValue('@palindromeInput', '12021')
+            .click('@palindromeButton')
+            .verify.containsText('@palindromeResults', 'true')
+            .clearValue('@palindromeInput')
+            .setValue('@palindromeInput', 'lol')
+            .verify.containsText('@palindromeResults','true')
+            .clearValue('@palindromeInput')
+            .setValue('@palindromeInput', '47')
+            .click('@palindromeButton')
+            .verify.containsText('@palindromeResults', 'false')
+            .clearValue('@palindromeInput')
+            .setValue('@palindromeInput', 'look')
+            .verify.containsText('@palindromeResults','false')
+            .clearValue('@palindromeInput')
+        },
+  
 }
