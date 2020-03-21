@@ -97,5 +97,22 @@ module.exports ={
             .verify.containsText('@palindromeResults','false')
             .clearValue('@palindromeInput')
         },
+        'Sum Test':browser => {
+            hachir 
+                .setValue('@sumInput1','1')
+                .pause(10000)
+                .setValue('@sumInput2','2')
+                .pause(10000)
+                .click('@sumButton')
+                .verify.containsText('@sumResults','3')
+                .clearValue('@sumInput1')
+                .clearValue('@sumInput2')
+                .setValue('@sumInput1','9000')
+                .pause(10000)
+                .setValue('@sumInput2','97564')
+                .pause(10000)
+                .click('@sumButton')
+                .verify.containsText('@sumResults','106564')
+     }
   
 }
